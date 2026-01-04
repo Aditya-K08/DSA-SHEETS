@@ -1,0 +1,10 @@
+Implement auth using mobile no and otp
+redirect to home page
+profiles will be there
+with call buttons
+web call api
+
+Chat Application
+
+
+https://www.figma.com/file/9iNtdgEbljOYcfHy2cbsWr/tooheal?type=design&node-id=137-164&mode=design

@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve(int n, int k, vector<int>& arr) {
+    int MOD = 1e9+7;
+    vector<int> dp(k + 1, 0);
+    dp[0] = 1; 
+
+    for (int i = 1; i <= k; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i - arr[j] >= 0) {
+                dp[i] = (dp[i] + dp[i - arr[j]]) % MOD; 
+            }
+        }
+    }
+
+    cout << dp[k] << endl;
+}
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    solve(n, k, arr);
+    return 0;
+}

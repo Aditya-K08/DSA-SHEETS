@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void aditya(){
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    map<int, int> map;
+    for(int i = 0; i < n; i++) 
+        cin >> arr[i];
+    
+    for(int i = 0; i < n; i++) 
+        map[arr[i]]++;
+    
+    if(map.size()>2) {
+	cout<<"NO"; return;
+    }
+    if(map.size()==1){
+    	cout<<"YES";return;
+    }	
+    vector<int>v(2);
+    int i=0;
+    for(auto it:map){
+  	v[i++]=it.second;
+    }	
+    abs(v[0]-v[1])>=2?cout<<"NO" : cout<<"YES";			
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while(t--){
+        aditya();
+        cout << endl;
+    }
+
+    return 0;
+}

@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+#define f(i,a,n) for(int i=a;i<n;i++)
+#define r(i,a,n) for(int i=a;i>=n;i--)
+#define ll long long
+
+
+int main() {
+  ll n;
+  cin>>n;
+  vector<int>arr(n);
+  f(i,0,n) cin>>arr[i];
+  ll ans=0;
+  f(i,1,n){
+    if(arr[i]>arr[i-1]) continue;
+    else{
+      ans+=arr[i-1]-arr[i];
+    }
+  }
+  cout<<ans;
+  return 0;
+}
